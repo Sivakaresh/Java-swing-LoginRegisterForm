@@ -27,23 +27,26 @@ public class Login_Form extends javax.swing.JFrame {
      */
     public Login_Form() {
         initComponents();
-        
+
         this.setLocationRelativeTo(null);
-        
-        Border jpanel_title_border = BorderFactory.createMatteBorder(0, 1, 1, 1, Color.yellow);
+
+        Border jpanel_title_border = BorderFactory.createMatteBorder(0, 1, 1, 1, new Color(0,204,204));
         jPanel_title.setBorder(jpanel_title_border);
-        
+
         Border globe_panel_border = BorderFactory.createMatteBorder(1, 1, 1, 1, Color.orange);
         jPanel1_glob.setBorder(globe_panel_border);
-        
+
         Border label_border = BorderFactory.createMatteBorder(1, 1, 1, 1, Color.black);
         jLabel_minimize.setBorder(label_border);
         jLabel_close.setBorder(label_border);
-        
+
+        Border label_create_account_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.gray);
+        jLabel_Create_Account.setBorder(label_create_account_border);
+
         Border label_icon_border = BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(153, 153, 153));
         jTextField_UserName.setBorder(label_icon_border);
         jPasswordField1_Password.setBorder(label_icon_border);
-        
+
         Border field_border = BorderFactory.createMatteBorder(1, 1, 1, 1, Color.white);
         jTextField_UserName.setBorder(field_border);
         jPasswordField1_Password.setBorder(field_border);
@@ -66,6 +69,7 @@ public class Login_Form extends javax.swing.JFrame {
         jTextField_UserName = new javax.swing.JTextField();
         jPasswordField1_Password = new javax.swing.JPasswordField();
         jButton_Login = new javax.swing.JButton();
+        jLabel_Create_Account = new javax.swing.JLabel();
         jLabel_close = new javax.swing.JLabel();
         jLabel_minimize = new javax.swing.JLabel();
         jPanel_title = new javax.swing.JPanel();
@@ -132,22 +136,43 @@ public class Login_Form extends javax.swing.JFrame {
             }
         });
 
+        jLabel_Create_Account.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel_Create_Account.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel_Create_Account.setText("Create new Account >>");
+        jLabel_Create_Account.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Create_Account.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_Create_AccountMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel_Create_AccountMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel_Create_AccountMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton_Login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField_UserName)
-                            .addComponent(jPasswordField1_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))))
+                            .addComponent(jButton_Login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField_UserName)
+                                    .addComponent(jPasswordField1_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(jLabel_Create_Account)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -166,7 +191,9 @@ public class Login_Form extends javax.swing.JFrame {
                     .addComponent(jPasswordField1_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jLabel_Create_Account)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png")));
@@ -249,7 +276,7 @@ public class Login_Form extends javax.swing.JFrame {
                             .addComponent(jLabel_close)
                             .addComponent(jLabel_minimize)))
                     .addComponent(jPanel_title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -317,7 +344,7 @@ public class Login_Form extends javax.swing.JFrame {
         if (jTextField_UserName.getText().trim().toLowerCase().equals("username")) {
             jTextField_UserName.setText("");
             jTextField_UserName.setForeground(Color.black);
-            
+
             Border jLabel_icon = BorderFactory.createMatteBorder(1, 1, 1, 1, Color.yellow);
             jTextField_UserName.setBorder(jLabel_icon);
         }
@@ -329,9 +356,9 @@ public class Login_Form extends javax.swing.JFrame {
             jTextField_UserName.setText("username");
             jTextField_UserName.setForeground(new Color(153, 153, 153));
         }
-        
+
         Border label_icon_border = BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(153, 153, 153));
-        jTextField_UserName.setBorder(label_icon_border);        
+        jTextField_UserName.setBorder(label_icon_border);
     }//GEN-LAST:event_jTextField_UserNameFocusLost
 
     private void jPasswordField1_PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1_PasswordFocusGained
@@ -340,7 +367,7 @@ public class Login_Form extends javax.swing.JFrame {
         if (pass.trim().toLowerCase().equals("password")) {
             jPasswordField1_Password.setText("");
             jPasswordField1_Password.setForeground(Color.black);
-            
+
             Border jLabel_icon = BorderFactory.createMatteBorder(1, 1, 1, 1, Color.yellow);
             jPasswordField1_Password.setBorder(jLabel_icon);
         }
@@ -385,35 +412,65 @@ public class Login_Form extends javax.swing.JFrame {
         // TODO add your handling code here:
         PreparedStatement st;
         ResultSet rs;
-        
+
         String username = jTextField_UserName.getText();
         String password = String.valueOf(jPasswordField1_Password.getPassword());
-        
-        String query = "SELECT * FROM `` WHERE ``=? AND ``=?";
-        
-        try {
-            st = LoginCredential.getConnection().prepareStatement(query);
-            
-            st.setString(1, username);
-            st.setString(2, password);
-            rs = st.executeQuery();
-            
-            if (rs.next()) {
-                Menu_Form form = new Menu_Form();
+
+        String query = "SELECT * FROM `users` WHERE `username`=? AND `password`=? ";
+
+        if (username.trim().equals("username")) {
+            JOptionPane.showMessageDialog(null, "Enter Your Username", "Empty Username", 2);
+        } else if (password.trim().equals("password")) {
+            JOptionPane.showMessageDialog(null, "Enter Your Password", "Empty password", 2);
+        } else {
+
+            try {
+                st = My_CNX.getConnection().prepareStatement(query);
+
+                st.setString(1, username);
+                st.setString(2, password);
+                rs = st.executeQuery();
+
+                if (rs.next()) {
+                    Menu_Form form = new Menu_Form();
 //                form.setVisible(true);
 //                form.pack();
 //                form.setLocationRelativeTo(null);
-                
-                this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(null, "invaild Username / Password ", "Login Error", 2);
+
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "invaild Username / Password ", "Login Error", 2);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Login_Form.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(Login_Form.class.getName()).log(Level.SEVERE, null, ex);
+
         }
-        
+
 
     }//GEN-LAST:event_jButton_LoginActionPerformed
+
+    private void jLabel_Create_AccountMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Create_AccountMouseEntered
+        // TODO add your handling code here:
+        Border label_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.blue);
+        jLabel_Create_Account.setBorder(label_border);
+    }//GEN-LAST:event_jLabel_Create_AccountMouseEntered
+
+    private void jLabel_Create_AccountMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Create_AccountMouseExited
+        // TODO add your handling code here:
+        Border label_create_account_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.gray);
+        jLabel_Create_Account.setBorder(label_create_account_border);
+    }//GEN-LAST:event_jLabel_Create_AccountMouseExited
+
+    private void jLabel_Create_AccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Create_AccountMouseClicked
+        // TODO add your handling code here:
+        Register_Form rf = new Register_Form();
+        rf.setVisible(true);
+        rf.pack();
+        rf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dispose();
+
+    }//GEN-LAST:event_jLabel_Create_AccountMouseClicked
 
     /**
      * @param args the command line arguments
@@ -455,6 +512,7 @@ public class Login_Form extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel_Create_Account;
     private javax.swing.JLabel jLabel_close;
     private javax.swing.JLabel jLabel_minimize;
     private javax.swing.JPanel jPanel1_glob;
